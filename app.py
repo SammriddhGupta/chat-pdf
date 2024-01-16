@@ -2,8 +2,8 @@ import streamlit as st
 from openai import OpenAI
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
 
 # Loop through all the pdfs, loop through all the pages, extract the text and return it as a string
 def get_pdf_text(pdf_docs):
