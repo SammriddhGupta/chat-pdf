@@ -7,7 +7,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-
+from htmlTemplates import *
 
 # Loop through all the pdfs, loop through all the pages, extract the text and return it as a string
 def get_pdf_text(pdf_docs):
@@ -37,10 +37,7 @@ def get_conversation_chain(vectorstore, api_key):
     my_llm = ChatOpenAI(openai_api_key=api_key)
     # now we need to initialise an instance of memory
     my_memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
-    conversation_chain = ConversationalRetrievalChain.from_llm(
-        llm=my_llm,
-        retriever=vectorstore.as_retriever(),
-        memory=my_memory
+    conversation_chain = ConversationalRetrievalChain.from_llm(llm=my_llm, retriever=vectorstore.as_retriever(),memory=my_memory
     )
     return conversation_chain
     
@@ -49,12 +46,19 @@ def get_conversation_chain(vectorstore, api_key):
 def main():
     st.set_page_config(page_title='Go chat with pdfs', page_icon=':shark:')
     
+    # add our custom css
+    st.write(css, unsafe_allow_html=True)
+    
     # checking for and creating session state
     if "conversation" not in st.session_state:
         st.session_state.conversation = None 
     
     st.header("Chat with pdfs :shark:")
     question = st.text_input("Ask any question about your documents")
+    
+    # showing chat templates 
+    st.write(user_template.replace("{{MSG}}", "Hola chatbot"), unsafe_allow_html=True)
+    st.write(bot_template.replace("{{MSG}}", "Hola, buenos días"), unsafe_allow_html=True)
     
     with st.sidebar:
         OPENAI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
