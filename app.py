@@ -41,7 +41,18 @@ def get_conversation_chain(vectorstore, api_key):
     )
     return conversation_chain
     
-
+def handle_user_input(user_question):
+    response = st.session_state.conversation.invoke({'question': user_question})
+    # st.write(response) # for debugging
+    
+    # now creating a new session state for our chat history
+    st.session_state.chat_history = response['chat_history']
+    
+    for i, msg in enumerate(st.session_state.chat_history):
+        if i % 2 ==0:
+            st.write(user_template.replace("{{MSG}}", msg.content), unsafe_allow_html=True)
+        else:
+            st.write(bot_template.replace("{{MSG}}", msg.content), unsafe_allow_html=True)
 
 def main():
     st.set_page_config(page_title='Go chat with pdfs', page_icon=':shark:')
@@ -52,13 +63,15 @@ def main():
     # checking for and creating session state
     if "conversation" not in st.session_state:
         st.session_state.conversation = None 
+        
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = None
     
     st.header("Chat with pdfs :shark:")
-    question = st.text_input("Ask any question about your documents")
+    user_question = st.text_input("Ask any question about your documents")
     
-    # showing chat templates 
-    st.write(user_template.replace("{{MSG}}", "Hola chatbot"), unsafe_allow_html=True)
-    st.write(bot_template.replace("{{MSG}}", "Hola, buenos días"), unsafe_allow_html=True)
+    if user_question:
+        handle_user_input(user_question)
     
     with st.sidebar:
         OPENAI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
@@ -82,12 +95,7 @@ def main():
                 
                 # create conversation chain 
                 # we do not want streamlit to re-initialise the conversation chain every time we click any button since it rereuns the code, so we use session state
-                st.session_stateconversation = get_conversation_chain(vectorstore, OPENAI_API_KEY)
-        
-        
-            
-        
-    
+                st.session_state.conversation = get_conversation_chain(vectorstore, OPENAI_API_KEY)
 
 # to test app.py 
 if __name__ == '__main__':
