@@ -68,6 +68,7 @@ def main():
         st.session_state.chat_history = None
     
     st.header("Chat with pdfs :shark:")
+    
     user_question = st.text_input("Ask any question about your documents")
     
     if user_question:
