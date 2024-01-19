@@ -28,3 +28,9 @@ jobs:
       - name: Run Streamlit app
         run: |
           streamlit run app.py
+          if [ $? -eq 0 ]; then
+            echo "Streamlit app executed successfully"
+          else
+            echo "Error: Streamlit app execution failed"
+            exit 1  # Terminate the workflow due to the failure
+          fi
