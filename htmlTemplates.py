@@ -3,7 +3,7 @@ css = '''
 
 [ data-testid="stAppViewContainer"] {
     
-background-image: url("https://img.freepik.com/free-photo/beautiful-arrangement-different-books_23-2148883798.jpg?w=2000&t=st=1705930371~exp=1705930971~hmac=62dbaaf5126f8b9590cf85ccabc8cba238d2cdbf08e6e0c470267b2374a582ec");
+background-image: url("https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
 background-size: cover;
 
