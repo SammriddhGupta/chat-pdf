@@ -55,10 +55,10 @@ def handle_user_input(user_question):
             st.write(bot_template.replace("{{MSG}}", msg.content), unsafe_allow_html=True)
 
 def main():
-    st.set_page_config(page_title='Go chat with pdfs', page_icon=':shark:')
+    st.set_page_config(page_title='Go chat with pdfs', page_icon=':robot_face:')
     
     st.markdown("""
-    ## Chat with PDFs :shark:
+    ## Chat with PDFs :robot_face:
 
     1. Ask any question about your documents in the input box.
     2. Upload your PDFs and click 'Process.'
@@ -74,8 +74,6 @@ def main():
         
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
-    
-    #st.header("Chat with pdfs :shark:")
     
     user_question = st.text_input("Go on, get started!")
     
