@@ -3,7 +3,7 @@ css = '''
 
 [ data-testid="stAppViewContainer"] {
     
-background-image: url("https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+background-image: url("https://images.pexels.com/photos/5208362/pexels-photo-5208362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 
 background-size: cover;
 
