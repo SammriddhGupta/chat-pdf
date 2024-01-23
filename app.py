@@ -60,9 +60,10 @@ def main():
     st.markdown("""
     ## Chat with PDFs :robot_face:
 
-    1. Ask any question about your documents in the input box.
+    1. Enter your OpenAI API key in the input field in the sidebar.
     2. Upload your PDFs and click 'Process.'
-    3. View the conversation history and chat with the AI chatbot.
+    3. Ask any question about your documents in the input box.
+    4. Retain your conversation history and ask as many questions as you'd like.
     """)
     
     # add our custom css
@@ -79,6 +80,8 @@ def main():
     
     if user_question:
         handle_user_input(user_question)
+        
+    st.write(tech_stack_buttons, unsafe_allow_html=True)
     
     with st.sidebar:
         OPENAI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
