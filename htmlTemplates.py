@@ -2,11 +2,31 @@ css = '''
 <style>
 
 [ data-testid="stAppViewContainer"] {
-    
-background-image: url("https://images.pexels.com/photos/5208362/pexels-photo-5208362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("https://images.pexels.com/photos/1296726/pexels-photo-1296726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
 
-background-size: cover;
+    background-size: cover;
+}
 
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-tech-stack {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
 }
 
 .chat-message {
@@ -41,6 +61,17 @@ background-size: cover;
   padding: 0 1.5rem;
   color: #fff;
 }
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .btn-tech-stack {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Add more adjustments as needed */
+}
+
 '''
 
 bot_template = '''
@@ -58,5 +89,15 @@ user_template = '''
         <img src="https://i.ibb.co/37RZbFv/human.png">
     </div>    
     <div class="message">{{MSG}}</div>
+</div>
+'''
+
+tech_stack_buttons = '''
+<div class="footer">
+    <p style="color: black;">Built with:</p>
+    <button class="btn btn-python">Python</button>
+    <button class="btn btn-langchain">Langchain</button>
+    <button class="btn btn-openai">OpenAI</button>
+    <button class="btn btn-streamlit">Streamlit</button>
 </div>
 '''
