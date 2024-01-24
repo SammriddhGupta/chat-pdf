@@ -29,12 +29,12 @@ def get_text_chunks(text):
     return chunks
 
 def get_vectorstore(text_chunks, api_key):
-    embeddings = OpenAIEmbeddings(openai_api_key=api_key)
+    embeddings = OpenAIEmbeddings(openai_api_key=api_key, model="text-embedding-ada-002")
     vectorstore = FAISS.from_texts(texts = text_chunks, embedding = embeddings)
     return vectorstore
 
 def get_conversation_chain(vectorstore, api_key):
-    my_llm = ChatOpenAI(openai_api_key=api_key)
+    my_llm = ChatOpenAI(openai_api_key=api_key, model="gpt-3.5-turbo")
     # now we need to initialise an instance of memory
     my_memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(llm=my_llm, retriever=vectorstore.as_retriever(),memory=my_memory
