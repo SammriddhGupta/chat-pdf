@@ -9,6 +9,9 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import *
 
+# Deactivate usage statistics collection
+st.set_option('browser.gatherUsageStats', False)
+
 # Loop through all the pdfs, loop through all the pages, extract the text and return it as a string
 def get_pdf_text(pdf_docs):
     text = ""
