@@ -1,6 +1,6 @@
 # A chatbot for asking questions based on uploaded pdfs
 
-Built using Langchain and Open AI, hosted using streamlit
+Built using Langchain, APIs from OpenAI and HuggingFace, hosted using streamlit
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://simple-chat-pdf.streamlit.app/)
 
@@ -12,10 +12,13 @@ Built using Langchain and Open AI, hosted using streamlit
 ### Tech Stack
 The app is built using the following libraries and APIs:
 - Streamlit: For creating the web interface.
+- LangChain: a framework for developing applications powered by language models.
 - OpenAI's GPT API: To enable natural language interaction with the PDFs. 
     - gpt-3.5-turbo for chat. 
     - text-embedding-ada-002 for embeddings.
-- LangChain: a framework for developing applications powered by language models.
+- Hugging Face open source models: 
+    - hkunlp/instructor-xl for embeddings.
+    - used google/flan-t5-xxl for chat.
 - PyPDF2: For extracting text from PDF documents.
 Other custom libraries for text processing and conversation management.
 
