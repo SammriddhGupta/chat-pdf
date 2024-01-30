@@ -98,6 +98,7 @@ tech_stack_buttons = '''
     <button class="btn btn-python">Python</button>
     <button class="btn btn-langchain">Langchain</button>
     <button class="btn btn-openai">OpenAI</button>
+    <button class="btn btn-openai">HuggingFace</button>
     <button class="btn btn-streamlit">Streamlit</button>
 </div>
 '''
