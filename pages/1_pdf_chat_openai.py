@@ -81,7 +81,7 @@ def main():
     if user_question:
         handle_user_input(user_question)
         
-    st.write(tech_stack_buttons, unsafe_allow_html=True)
+    st.write(tech_stack_buttons_1, unsafe_allow_html=True)
     
     with st.sidebar:
         OPENAI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")

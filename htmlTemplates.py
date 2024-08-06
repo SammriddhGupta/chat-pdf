@@ -1,12 +1,6 @@
 css = '''
 <style>
 
-[ data-testid="stAppViewContainer"] {
-    background-image: url("https://images.pexels.com/photos/1296726/pexels-photo-1296726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-
-    background-size: cover;
-}
-
 .footer {
     position: relative;
     bottom: 0;
@@ -77,7 +71,7 @@ css = '''
 bot_template = '''
 <div class="chat-message bot">
     <div class="avatar">
-        <img src="https://i.ibb.co/R30gsMV/robot.jpg">
+        <img src="https://i.ibb.co/bdLZKFh/robot.jpg">
     </div>
     <div class="message">{{MSG}}</div>
 </div>
@@ -86,19 +80,39 @@ bot_template = '''
 user_template = '''
 <div class="chat-message user">
     <div class="avatar">
-        <img src="https://i.ibb.co/37RZbFv/human.png">
+        <img src="https://i.ibb.co/5Mx47pY/human.png">
     </div>    
     <div class="message">{{MSG}}</div>
 </div>
 '''
 
-tech_stack_buttons = '''
+tech_stack_buttons_1 = '''
 <div class="footer">
     <p style="color: black;">Built with:</p>
     <button class="btn btn-python">Python</button>
     <button class="btn btn-langchain">Langchain</button>
     <button class="btn btn-openai">OpenAI</button>
-    <button class="btn btn-openai">HuggingFace</button>
     <button class="btn btn-streamlit">Streamlit</button>
 </div>
+'''
+
+
+tech_stack_buttons_2 = '''
+<div class="footer">
+    <p style="color: black;">Built with:</p>
+    <button class="btn btn-python">Python</button>
+    <button class="btn btn-langchain">Langchain</button>
+    <button class="btn btn-hf">HuggingFace</button>
+    <button class="btn btn-streamlit">Streamlit</button>
+</div>
+'''
+
+
+'''
+# template to add background image 
+[ data-testid="stAppViewContainer"] {
+    background-image: url("https://images.pexels.com/photos/1296726/pexels-photo-1296726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+
+    background-size: cover;
+}
 '''
