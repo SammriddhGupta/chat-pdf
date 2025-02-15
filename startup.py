@@ -11,7 +11,7 @@ st.sidebar.success("Navigate through the pages from the menu above.")
 
 st.markdown(
     """
-    ## Right now, there's a chatbot for asking questions based on uploaded pdfs
+    ## Enjoy using a chatbot for asking questions based on uploaded pdfs
     
     ### Features
     - PDF Processing: The app reads and extracts text content from multiple uploaded PDF documents.
