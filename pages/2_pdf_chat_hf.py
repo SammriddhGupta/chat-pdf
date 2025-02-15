@@ -84,6 +84,17 @@ def main():
     st.write(tech_stack_buttons_2, unsafe_allow_html=True)
     
     with st.sidebar:
+        
+        st.error(
+        "Notice: The functionality utilizing Hugging Face models is temporarily disabled "
+        "due to unresolved dependency conflicts. The source code is available on GitHub, and "
+        "a future update will address these issues by determining the correct dependency versions. "
+        "Thank you for your understanding."
+        )
+        
+        st.stop()
+        
+        
         HUGGINGFACE_API_KEY = st.text_input("HuggingFace API Key", key="chatbot_api_key", type="password")
         if not HUGGINGFACE_API_KEY:
             st.warning("Please add your HuggingFace API key to continue.")
